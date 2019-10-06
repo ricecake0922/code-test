@@ -1,0 +1,51 @@
+const Discord = require('discord.js');
+const bot = new Discord.Client();
+
+const token = '1234567';
+
+const PREFIX = '!';
+
+bot.on('ready', () => {
+console.log('This bot is online!');
+})
+
+
+bot.on('message', message=>{
+
+    let args = message.content.substring(PREFIX.length).split(" ");
+
+    switch(args[0]){
+        case 'slap':
+            message.channel.sendMessage('http://gifon007.eu/wp-content/uploads/2017/06/Funny-Video-Penguins-Smack-Slap-Gif.gif%27');       
+        break;
+
+        case 'youtube':
+            message.channel.sendMessage('https://www.youtube.com/watch?v=X_qg0Ut9nU8');
+        break;
+
+        case 'web':
+            message.channel.sendMessage('https://www.google.com/webhp?hl=en&ictx=2&sa=X&ved=0ahUKEwjv2svO9IflAhWJi1wKHXZXB8QQPQgH');
+        break;
+
+        case 'HI3FB':
+            if(args[1] === 'en'){
+                message.channel.sendMessage('https://www.facebook.com/HonkaiImpact3rd/');
+            }else if(args[1] === 'th'){
+                message.channel.sendMessage('https://www.facebook.com/Honkai3rd.th/');
+            }else if(args[1] === 'vn'){
+                message.channel.sendMessage('https://www.facebook.com/honkai3rd.vn/');
+            }else{
+                message.channel.sendMessage('invalid page');
+
+            }
+
+        break;
+
+         
+    }
+
+
+})
+
+
+bot.login(token);
